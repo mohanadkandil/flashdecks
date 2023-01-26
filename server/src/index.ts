@@ -11,10 +11,6 @@ app.use(express.json());
 
 const PORT = 5000;
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("welcome to the new app");
-});
-
 app.post("/decks", async (req: Request, res: Response) => {
   const newDeck = new Deck({
     title: req.body.title,
