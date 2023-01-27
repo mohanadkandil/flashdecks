@@ -43,6 +43,7 @@ export default function Decks() {
 
   return (
     <div className="Deck">
+      <h1>{deck?.title}</h1>
       <ul className="cards">
         {cards.map((card, index) => {
           return (
