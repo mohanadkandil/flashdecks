@@ -9,7 +9,8 @@ import {
   TDeck,
   deleteCard,
 } from "./api";
-import "./App.css";
+
+import "./Deck.css";
 
 export default function Decks() {
   const [deck, setDeck] = useState<TDeck | undefined>();
@@ -41,8 +42,8 @@ export default function Decks() {
   }, [deckId]);
 
   return (
-    <div className="App">
-      <ul className="decks">
+    <div className="Deck">
+      <ul className="cards">
         {cards.map((card, index) => {
           return (
             <li key={index}>
