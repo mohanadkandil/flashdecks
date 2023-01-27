@@ -12,13 +12,15 @@ function App() {
 
   const handleCreateDeck = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch("http://localhost:5000/decks", {
+    const response = await fetch("http://localhost:5000/decks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ title: deckTitle }),
     });
+    const deck = await response.json();
+    setDecks([...decks, deck]);
     setDeckTitle("");
   };
 
